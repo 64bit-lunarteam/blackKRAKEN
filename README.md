@@ -1,4 +1,3 @@
-# blackKRAKEN
-blackkraken is a one-of-a-kind hacking console which you can mod and make plugins for!
+# blackKRAKEN Plugins
 
-(THIS IS A WIP)
+You can install these plugins into blackKRAKEN by doing 'bk inst {plugin}'!
