@@ -1,1 +1,3 @@
--- code later
+main = Fore.BLUE
+err = Fore.RED
+valid = Fore.LIGHTYELLOW_EX
