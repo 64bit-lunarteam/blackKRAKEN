@@ -5,19 +5,11 @@ if ucmd == 'json write':
     try:
         import json
 
-        ip = input('IP Address: ')
-        geolocation = input('Geolocation: ')
-        openports = input('Open ports: ')
-        ipv4ipv6 = input('IPv4 or IPv6? ')
-        hostname = input('Hostname: ')
+        data = input(f'{main}Info you are writing: ')
 
 
         data = {
-            "IP Address": ip,
-            "Geolocation": geolocation,
-            "Open ports": openports,
-            "IP type": ipv4ipv6,
-            "Hostname": hostname,
+            "Data": data
         }
 
         with open('output.json', 'w') as f:
