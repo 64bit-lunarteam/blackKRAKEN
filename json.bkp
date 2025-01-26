@@ -1,0 +1,60 @@
+# Welcome to the official JSON plugin for blackKRAKEN! In this plugin, you can read and write json files!
+
+if ucmd == 'json write':
+    
+    try:
+        import json
+
+        ip = input('IP Address: ')
+        geolocation = input('Geolocation: ')
+        openports = input('Open ports: ')
+        ipv4ipv6 = input('IPv4 or IPv6? ')
+        hostname = input('Hostname: ')
+
+
+        data = {
+            "IP Address": ip,
+            "Geolocation": geolocation,
+            "Open ports": openports,
+            "IP type": ipv4ipv6,
+            "Hostname": hostname,
+        }
+
+        with open('output.json', 'w') as f:
+            json.dump(data, f)
+
+        print()
+        print(f'{main}[{valid}+{main}] Data exported to .json succesfully!')
+        print()
+        with open('output.json') as f:
+            outputdata = json.load(f)
+            print(str(valid) + str(outputdata))
+    except ImportError as e:
+        print(f'{main}[{err}-{main}] Error importing json library. Do you have it installed? Error details: {e}')
+
+    except Exception as e:
+        print(f'{main}[{err}-{main}] An unexpected error occurred: {e}')
+
+    finally:
+        cmd()
+
+if ucmd == 'json read':
+
+    try:
+
+        import json
+
+        with open('output.json') as f:
+            outputdata = json.load(f)
+            print()
+            print(str(valid) + str(outputdata))
+    
+    except ImportError as e:
+        print(f'{main}[{err}-{main}] Error importing json library. Do you have it installed? Error details: {e}')
+
+    except Exception as e:
+
+        print(f'{main}[{err}-{main}] An unexpected error occurred: {e}')
+    
+    finally:
+        cmd()
