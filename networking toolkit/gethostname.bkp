@@ -1,0 +1,23 @@
+if ucmd == 'gethostname':
+
+
+    print(f'\n{main}Please specify the IP to resolve the hostname.')
+    ip = input(str(f"{valid}IP address: {main}"))
+
+    try:
+
+        import socket
+        
+        # Try to get the hostname for the IP address
+        hostname, _, _ = socket.gethostbyaddr(ip)
+        print(f"{main}[{valid}+{main}] Hostname for IP {ip}: {valid}{hostname}")
+    except socket.herror:
+        # If the hostname cannot be resolved, inform the user
+        print(f"{main}[{err}-{main}] Could not resolve hostname for IP {ip}")
+
+    except Exception as e:
+
+        print(f"{main}[{err}-{main}] An unexpected error occured: {e}")
+    
+    finally:
+        cmd()
