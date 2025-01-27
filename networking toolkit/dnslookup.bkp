@@ -1,1 +1,18 @@
--- code later
+
+if ucmd == 'dnslookup':
+
+    import socket
+
+    print(f'\n{main}Please specify the domain.')
+    domain = input(str(f"{valid}Domain: {main}"))
+
+    try:
+        ip_address = socket.gethostbyname(domain)
+        print(f"{main}[{valid}+{main}] The IP address of {domain} is: {valid}{ip_address}")
+    except socket.gaierror:
+        print(f"{main}[{err}-{main}] Unable to get the IP address for {valid}{domain}")
+    except Exception as e:
+        print(f"{main}[{err}-{main}] An unexpected error occured: {e}")
+
+    finally:
+        cmd()
